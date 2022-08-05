@@ -1,11 +1,13 @@
-import pandas as pd
 from src.jobs import read
 
 
 def get_unique_job_types(path):
 
-    jobs = pd.DataFrame(read(path))
-    unique_jobs = jobs.job_type.unique()
+    jobs = read(path)
+    unique_jobs = set()
+    for job in jobs:
+        unique_jobs.add(job["job_type"])
+
     return unique_jobs
 
 
