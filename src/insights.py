@@ -71,21 +71,17 @@ def get_max_salary(path):
 
 
 def get_min_salary(path):
-    """Get the minimum salary of all jobs
 
-    Must call `read`
+    jobs = read(path)
+    salaries = []
+    for job in jobs:
+        if job["min_salary"]:  # verifica se tem conteúdo
+            if job["min_salary"].isdigit():  # verifica se é numero
+                salaries.append(int(job["min_salary"]))
+    return min(salaries)  # faz a comparação
 
-    Parameters
-    ----------
-    path : str
-        Must be passed to `read`
-
-    Returns
-    -------
-    int
-        The minimum salary paid out of all job opportunities
-    """
-    pass
+# https://www.w3schools.com/python/python_ref_functions.asp
+    
 
 
 def matches_salary_range(job, salary):
