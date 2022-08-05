@@ -81,7 +81,6 @@ def get_min_salary(path):
     return min(salaries)  # faz a comparação
 
 # https://www.w3schools.com/python/python_ref_functions.asp
-    
 
 
 def matches_salary_range(job, salary):
