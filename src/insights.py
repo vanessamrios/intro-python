@@ -84,10 +84,7 @@ def matches_salary_range(job, salary):
     if max_salary < min_salary:
         raise ValueError("valor máximo maior que valor mínimo")
 
-    if max_salary >= salary >= min_salary:
-        return True
-    else:
-        return False
+    return max_salary >= salary >= min_salary
 
 
 def filter_by_salary_range(jobs, salary):
